@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400|Roboto+Mono&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="png" href="../pic/ff.png">
+    <link rel="stylesheet" href="../fonts/icomoon/style.css">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <title>Review</title>
+</head>
+
+<body>
+<%- include('./navbar'); %>
+
+
+<div class="content">
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="row mb-5">
+                    <div class="col-md-4 mr-auto">
+                        <h3 class="thin-heading mb-4">Nur-Sultan</h3>
+                        <p>Mangilik El, C1 <br> EXPO pavilion</p>
+                    </div>
+                    <div class="col-md-6 ml-auto">
+                        <h3 class="thin-heading mb-4">Contact Info</h3>
+                        <p>T: +7 (777) 7777777 <br> E: fleur.com</p>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+
+                        <h3 class="thin-heading mb-4">Leave a review</h3>
+
+                        <form action="/reviews" class="mb-5" method="post" id="contactForm" name="contactForm">
+                            <div class="row">
+                                <div class="col-md-6 form-group">
+                                    <textarea type="text" class="form-control" name="text" placeholder="Write your review here"></textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 form-group">
+                                    <!-- <textarea class="form-control" name="message" id="message" cols="30" rows="2" placeholder="Country"></textarea> -->
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <input onclick="location.reload()" type="submit" value="Send Message" class="btn btn-primary rounded-0 py-2 px-4">
+                                    <span class="submitting"></span>
+                                </div>
+                            </div>
+                        </form>
+
+                        <div id="form-message-warning mt-4"></div>
+                        <div id="form-message-success">
+                            Your message was sent, thank you!
+                        </div>
+
+
+
+                    </div>
+                </div>
+                <hr style="width: 50%">
+            </div>
+            <h3 class="thin-heading mb-4">Reviews of other people:</h3>
+            <br>
+
+        </div>
+        <div class="container">
+            <% rev.slice().reverse().forEach(function(comment) { %>
+                <fieldset class="border border-dark border-1 p-3">
+                    <p class="my-1"><%= comment.user.email %> (<%= comment.date %>)</p>
+                    <hr>
+                    <p class="lead"><%= comment.text %></p>
+                </fieldset>
+                <br>
+            <% }); %>
+        </div>
+    </div>
+
+</div>
+
+
+
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script src="../js/popper.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/jquery.validate.min.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/contact.js"></script>
+
+
+</body>
+
+</html>

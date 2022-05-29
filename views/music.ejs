@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Music Industry</title>
+    <%- include('./head'); %>
+    <link rel="icon" type="png" href="../pic/ff.png">
+    <link rel="stylesheet" href="../styles/music.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Arizonia&family=Arvo:wght@400;700&family=Bree+Serif&family=Cardo&family=Crete+Round:ital@1&family=DM+Serif+Display&family=Lusitana&family=Neonderthaw&display=swap');
+    </style>
+</head>
+
+<body>
+<%- include('./navbar'); %>
+
+<article class="gallery">
+    <svg viewBox="0 10 900 500">
+        <symbol id="s-text">
+            <text text-anchor="middle" x="50%" y="80%">MUSIC</text>
+        </symbol>
+
+        <g class="g-ants">
+            <use xlink:href="#s-text" class="text-copy"></use>
+            <use xlink:href="#s-text" class="text-copy"></use>
+            <use xlink:href="#s-text" class="text-copy"></use>
+            <use xlink:href="#s-text" class="text-copy"></use>
+            <use xlink:href="#s-text" class="text-copy"></use>
+        </g>
+    </svg>
+
+    <!-- <a href="">
+      <audio id="sound1" src="audio/cut.mp3" preload="auto"></audio>
+      <button id="myBtn" class="glow-on-hover" onclick="document.getElementById('sound1').play();" type="button">Click on me, dear!</button>
+    </a>
+    <script>
+    document.getElementById("myBtn").addEventListener("click", function() {
+      alert("Music is medical, because it softens the pain, dear.");
+    });
+    </script> -->
+
+    <h4></h4>
+    <div class="music">
+        <ul class="auto-grid" role="list">
+            <% music.forEach(function(m) { %>
+                <li class="mx-1" onclick="location.href='/music/<%= m.id %>'">
+                    <a style="cursor: pointer" class="profile">
+                        <p style="color: red"> <%= m.title %></p>
+                            <p><%= m.body %></p>
+                        <img id="image" src="<%= m.image %>" />
+                    </a>
+                </li>
+            <% }) %>
+        </ul>
+    </div>
+</article>
+<br><br>
+</body>
+
+</html>

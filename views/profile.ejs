@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Profile</title>
+    <%- include('./head'); %>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+<%- include('./navbar'); %>
+
+<br>
+<div class="container">
+    <br>
+    <hr>
+    <div class="content">
+        <div class="row">
+            <div class="col-4">
+                <h5 class="display-6">Information</h5>
+                <br>
+                <div class="border border-3 p-3">
+                    <h3>Username: <%= user.username %> </h3>
+                    <hr>
+                    <h4>Email: <%= user.email %> </h4>
+                </div>
+            </div>
+            <div class="col-8">
+                <h5 class="display-6 mx-4">Favourite</h5>
+                <br>
+                <div class="container-fluid mb-4">
+                    <div class="row">
+                        <p>
+                            <a style="width: 32%" class="btn btn-primary" data-bs-toggle="collapse"
+                               href="#multiCollapseExample1" role="button" aria-expanded="false"
+                               aria-controls="multiCollapseExample1">Movies</a>
+                            <a style="width: 33%" class="btn btn-primary" data-bs-toggle="collapse"
+                               data-bs-target="#multiCollapseExample2" aria-expanded="false"
+                               aria-controls="multiCollapseExample2">Literature</a>
+                            <a style="width: 30%" class="btn btn-primary" data-bs-toggle="collapse"
+                               data-bs-target="#multiCollapseExample3" aria-expanded="false"
+                               aria-controls="multiCollapseExample3">Music</a>
+                        </p>
+                        <div class="row">
+                            <div class="col">
+                                <div class="collapse multi-collapse" id="multiCollapseExample1">
+                                    <% user.favMovie.forEach(function(fav) { %>
+                                        <div class="card card-body">
+                                            <p style="font-size: 16px" class="lead">
+                                                <img style="width: 30%; align-content: center" src="<%= fav.image %>">
+                                                <%= fav.title %>
+                                            </p>
+                                        </div>
+                                    <% }) %>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="collapse multi-collapse" id="multiCollapseExample2">
+                                    <% user.favLiter.forEach(function(fav) { %>
+                                        <div class="card card-body">
+                                            <p style="font-size: 16px" class="lead">
+                                                <img style="width: 30%; align-content: center" src="<%= fav.image %>">
+                                                <%= fav.title %>
+                                            </p>
+                                        </div>
+                                    <% }) %>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="collapse multi-collapse" id="multiCollapseExample3">
+                                    <% user.favMusic.forEach(function(fav) { %>
+                                        <div class="card card-body">
+                                            <p style="font-size: 16px" class="lead">
+                                                <img style="width: 30%; align-content: center" src="<%= fav.image %>">
+                                                <%= fav.title %>
+                                            </p>
+                                        </div>
+                                    <% }) %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Registration</title>
+    <%- include('./head'); %>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+<%- include('./navbar'); %>
+
+<div class="row justify-content-center position-absolute top-50 start-50 translate-middle">
+    <div class="col-12 justify-content-center">
+        <div class="row">
+            <div class="col-12 text-center text-wrap">
+                <h1 class="display-4">Registration</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-6">
+        <p class="lead" style="font-size: 12px; text-align: center; color: red">Password length must be at least 7, should contain at
+            least one uppercase and lowercase letter, special symbol and number</p>
+        <form method="post" action="/reg">
+            <hr>
+            <br>
+            <div class="row">
+                <div class="col-md-12" style="min-width: 300px">
+                    <input type="text" name="username" class="form-control text-center" placeholder="Username">
+                </div>
+                <br><br>
+                <div class="col-md-12" style="min-width: 300px">
+                    <input type="email" name="email" class="form-control text-center" placeholder="Email">
+                </div>
+                <br><br>
+                <div class="col-md-12" style="min-width: 300px">
+                    <input type="password" name="password" class="form-control text-center" placeholder="Password">
+                </div>
+                <br><br>
+                <div class="col-md-12" style="min-width: 300px">
+                    <input type="password" name="repeat_password" class="form-control text-center"
+                           placeholder="Repeat password">
+                </div>
+                <br><br>
+            </div>
+
+            <div class="row justify-content-center ">
+                <div class="col-6 text-center my-4">
+                    <input type="submit" class="form-control text-center btn btn-outline-primary" value="Sign Up">
+                </div>
+
+                <div class="col-6">
+                    <div class="form-check justify-content-center">
+                        <span class="lead" style="font-size: 11px">Already have an account?</span>
+                        <input type="button" onclick="location.href='/login'"
+                               class="form-control text-center btn btn-outline-primary" value="Sign In">
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </form>
+    </div>
+</div>
+</div>
+
+</body>
+</html>

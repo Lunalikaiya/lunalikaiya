@@ -1,0 +1,347 @@
+body {
+  font-family: "Arvo", sans-serif;
+  max-width: 55rem;
+  padding: 2rem 1.5rem;
+  margin: 0 auto;
+  color: #241623;
+  background: black;
+}
+
+h1 {
+  font-weight: 900;
+  font-size: 2.7rem;
+  /* max-width: 20ch; */
+  font-family: Arvo;
+  color: white;
+  text-align: center;
+}
+
+
+
+/* CSS */
+.button-30 {
+  align-items: center;
+  appearance: none;
+  background-color: #FCFCFD;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #36395A;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono",monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+}
+
+.button-30:focus {
+  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+.button-30:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.button-30:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+  .glow-on-hover {
+    width: 250PX;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: absolute;
+    z-index: 0;
+    border-radius: 10px;
+    text-align: center;
+    justify-content: center;
+    transform: translate(-50%, -50%);
+    top: 60%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+}
+
+a {
+  color: currentcolor;
+}
+
+/* Utilities */
+.auto-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(var(--auto-grid-min-size, 18rem), 1fr)
+  );
+  grid-gap: var(--auto-grid-gap, 0);
+  padding: 0;
+}
+
+.gallery > * + * {
+  margin-top: var(--flow-space, 3rem);
+}
+
+/* Composition */
+.cinema {
+  --flow-space: 5rem;
+}
+
+/* Blocks */
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  aspect-ratio: 1/1;
+  position: relative;
+  padding: 1.5rem;
+  color: #ffffff;
+  backface-visibility: hidden;
+  text-decoration: none;
+  overflow: hidden;
+  text-align: center;
+}
+
+.profile::before,
+.profile::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  /*inset: 0;*/
+  top: 0;
+  left: 0;
+}
+
+
+.profile::before {
+  background: linear-gradient(
+    to top,
+    hsl(0 0% 0% / 0.79) 0%,
+    hsl(0 0% 0% / 0.787) 7.8%,
+    hsl(0 0% 0% / 0.779) 14.4%,
+    hsl(0 0% 0% / 0.765) 20.2%,
+    hsl(0 0% 0% / 0.744) 25.3%,
+    hsl(0 0% 0% / 0.717) 29.9%,
+    hsl(0 0% 0% / 0.683) 34.3%,
+    hsl(0 0% 0% / 0.641) 38.7%,
+    hsl(0 0% 0% / 0.592) 43.3%,
+    hsl(0 0% 0% / 0.534) 48.4%,
+    hsl(0 0% 0% / 0.468) 54.1%,
+    hsl(0 0% 0% / 0.393) 60.6%,
+    hsl(0 0% 0% / 0.31) 68.3%,
+    hsl(0 0% 0% / 0.216) 77.3%,
+    hsl(0 0% 0% / 0.113) 87.7%,
+    hsl(0 0% 0% / 0) 100%
+  );
+  transition: 300ms opacity linear;
+}
+
+.profile::after {
+  background: linear-gradient(
+    40deg,
+    hsl(5 9% 6% / 0.7) 0,
+    hsl(5 9% 6% / 0) 100%
+  );
+  opacity: 0;
+  transition: 300ms opacity linear;
+}
+
+.profile > * {
+  z-index: 1;
+}
+
+.profile img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  z-index: -1;
+  object-fit: cover;
+  filter: grayscale(1);
+  transition: filter 200ms ease, transform 250ms linear;
+}
+
+.profile h2,
+.profile p {
+  transform: translateY(2ex);
+}
+
+.profile h2 {
+  font-size: 1.7rem;
+  line-height: 1.2;
+  font-weight: 900;
+  letter-spacing: 0.03ch;
+  transition: 300ms transform ease;
+}
+
+.profile p {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.profile p {
+  opacity: 0;
+  transition: 300ms opacity linear, 300ms transform ease-in-out;
+}
+
+.profile:focus {
+  outline: 0.5rem solid white;
+  outline-offset: -0.5rem;
+}
+
+.profile:hover :is(h2, p),
+.profile:focus :is(h2, p) {
+  transform: none;
+}
+
+.profile:hover::after,
+.profile:focus::after,
+.profile:hover::before,
+.profile:focus::before {
+  opacity: 0.7;
+}
+
+.profile:hover p,
+.profile:focus p {
+  opacity: 1;
+  transition-delay: 200ms;
+}
+
+.profile:hover img,
+.profile:focus img {
+  filter: grayscale(0);
+  transform: scale(1.05) rotate(1deg);
+}
+
+
+/* audio { display:none;} */
+
+
+text{
+  translateY:auto;
+}
+body{
+  background: black;
+  font-family: Arvo;
+}
+
+svg {
+    display: block;
+    font: 10rem 'Arvo';
+    width: 800px;
+    height: 400px;
+    margin: auto;
+    padding: auto;
+    text-align: center;
+    display: flex;
+      justify-content: flex-end;
+}
+
+.text-copy {
+    fill: none;
+    stroke: white;
+    stroke-dasharray: 6% 9%;
+    stroke-width: 5px;
+    stroke-dashoffset: 0%;
+    animation: stroke-offset 5.5s infinite linear;
+}
+
+.text-copy:nth-child(1){
+	stroke: #4D163D;
+	animation-delay: -1;
+}
+
+.text-copy:nth-child(2){
+	stroke: #840037;
+	animation-delay: -2s;
+}
+
+.text-copy:nth-child(3){
+	stroke: #BD0034;
+	animation-delay: -3s;
+}
+
+.text-copy:nth-child(4){
+	stroke: #BD0034;
+	animation-delay: -4s;
+}
+
+.text-copy:nth-child(5){
+	stroke: #FDB731;
+	animation-delay: -5s;
+}
+
+@keyframes stroke-offset{
+	100% {stroke-dashoffset: -35%;}
+}
