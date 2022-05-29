@@ -43,8 +43,8 @@
             <% movie.forEach(function(m) { %>
                 <li class="mx-1" onclick="location.href='/movie/<%= m.id %>'">
                     <a style="cursor: pointer" target=_blank" class="profile">
-                        <p style="color: red"> <%= m.title %>
-                        <%= m.body %></p>
+                        <p style="color: red"> <%= m.title %></p>
+                        <p><%= m.body %></p>
                         <img id="image" src="<%= m.image %>" />
                     </a>
                 </li>
