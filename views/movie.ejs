@@ -3,7 +3,6 @@
 
 <head>
     <title>Movie Industry</title>
-    <%- include('./head'); %>
     <link rel="icon" type="png" href="../pic/ff.png">
     <link rel="stylesheet" href="../styles/music.css">
     <style>
@@ -12,8 +11,6 @@
 </head>
 
 <body>
-<%- include('./navbar'); %>
-
 <article class="gallery">
     <svg viewBox="0 10 900 500">
         <symbol id="s-text">
@@ -40,13 +37,14 @@
     </script> -->
 
     <h4></h4>
-    <div class="music">
+    <div class="cinema">
         <ul class="auto-grid" role="list">
+
             <% movie.forEach(function(m) { %>
                 <li class="mx-1" onclick="location.href='/movie/<%= m.id %>'">
-                    <a style="cursor: pointer" class="profile">
-                        <p style="color: red"> <%= m.title %></p>
-                        <p><%= m.body %></p>
+                    <a style="cursor: pointer" target=_blank" class="profile">
+                        <p style="color: red"> <%= m.title %>
+                        <%= m.body %></p>
                         <img id="image" src="<%= m.image %>" />
                     </a>
                 </li>

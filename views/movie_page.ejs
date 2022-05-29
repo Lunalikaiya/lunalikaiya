@@ -13,7 +13,7 @@
     <hr>
     <div class="content">
         <div class="row">
-            <div class="col-4">
+            <div class="col-6">
                 <h5 class="display-6">Information</h5>
                 <div class="border border-3 p-3 text-center">
                     <img id="image" style="width: 50%" src="<%= movie.image %>"/>
@@ -23,10 +23,15 @@
                     </button>
                     <hr>
                     <p><%= movie.body %> </p>
-                    <p class="lead"><%= movie.description %></p>
+                    <p class="lead">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= movie.url %>"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                    </p>
                 </div>
             </div>
-            <div class="col-8">
+            <div class="col-6">
                 <h5 class="display-6 mx-4">Comments</h5>
                 <div class="border border-1 p-3">
                     <% movie.comments.slice().reverse().forEach(function(comment) { %>
@@ -38,18 +43,18 @@
                         <br>
                     <% }); %>
                 </div>
-<br>
-                    <div class="container-fluid mb-4">
-                        <div class="row">
-                            <form action="/movie/<%= movie.id %>/comment" method="POST">
-                                <label for="text">Leave a comment</label>
-                                <textarea class="form-control border-1 border-dark" id="text" name="text"></textarea>
-                                <br>
-                                <input type="hidden" name="_method" value="DELETE">
-                                <button class="btn btn-success" type="submit">Post Comment</button>
-                            </form>
-                        </div>
+                <br>
+                <div class="container-fluid mb-4">
+                    <div class="row">
+                        <form action="/movie/<%= movie.id %>/comment" method="POST">
+                            <label for="text">Leave a comment</label>
+                            <textarea class="form-control border-1 border-dark" id="text" name="text"></textarea>
+                            <br>
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button class="btn btn-success" type="submit">Post Comment</button>
+                        </form>
                     </div>
+                </div>
             </div>
         </div>
     </div>
