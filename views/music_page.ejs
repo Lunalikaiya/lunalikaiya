@@ -12,7 +12,7 @@
     <hr>
     <div class="content">
         <div class="row">
-            <div class="col-4">
+            <div class="col-6">
                 <h5 class="display-6">Information</h5>
                 <div class="border border-3 p-3 text-center">
                     <img id="image" style="width: 50%" src="<%= music.image %>"/>
@@ -22,10 +22,15 @@
                     </button>
                     <hr>
                     <p><%= music.body %> </p>
-                    <p class="lead"><%= music.description %></p>
+                    <p class="lead">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= music.url %>"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                    </p>
                 </div>
             </div>
-            <div class="col-8">
+            <div class="col-6">
                 <h5 class="display-6 mx-4">Comments</h5>
                 <div class="border border-1 p-3">
                     <% music.comments.slice().reverse().forEach(function(comment) { %>
